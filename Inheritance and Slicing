@@ -1,0 +1,6 @@
+Class Inheritance:
+Creating a new class from already existing class attribute instead of creating
+from the Scratch is called class inheritance
+e.g., Chef - bake(), measure(), cook()
+        PastryChef - bake(), measure(), cook(), whisk(), dough() from chef class
+
