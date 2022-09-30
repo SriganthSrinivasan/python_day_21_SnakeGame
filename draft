@@ -44,18 +44,11 @@ while not game_over:
         scoreboard.game_over()
 
     # Detecting collision of snake with the body
-    # for part in snake.snake:
-    #     if snake.head == part:
-    #         pass
-    #     elif snake.head.distance(part) < 5:
-    #         game_over = True
-    #         scoreboard.game_over()
-
-    # Detecting collision of snake with the body using slicing
-    for part in snake.snake[1:]:
-        if snake.head.distance(part) < 5:
+    for part in snake.snake:
+        if snake.head == part:
+            pass
+        elif snake.head.distance(part) < 5:
             game_over = True
             scoreboard.game_over()
-
 
 screen.exitonclick()

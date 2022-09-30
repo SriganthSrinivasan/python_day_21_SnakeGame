@@ -14,15 +14,21 @@ class Snake:
 
     def create_snake(self):
         for i in range(3):
-            x_position = 0.00
-            y_position = 0.00
-            turtle = Turtle(shape="circle")
-            turtle.penup()
-            turtle.color("gold", "green")
-            turtle.shapesize(0.5, 0.5, 0.5)
-            turtle.setposition(x_position, y_position)
-            x_position += MOVE_DISTANCE
-            self.snake.append(turtle)
+            self.new_part(i)
+
+    def new_part(self, position):
+        x_position = 0.00
+        y_position = 0.00
+        turtle = Turtle(shape="circle")
+        turtle.penup()
+        turtle.color("white", "black")
+        turtle.shapesize(0.5, 0.5, 0.25)
+        turtle.setposition(x_position, y_position)
+        x_position += MOVE_DISTANCE
+        self.snake.append(turtle)
+
+    def extend(self):
+        self.new_part(self.snake[-1].position())
 
     def move_up(self):
         if self.head.heading() != DOWN:  # self.head has self.snake[0] as the value where

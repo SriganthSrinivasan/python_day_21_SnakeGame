@@ -1,6 +1,89 @@
 Class Inheritance:
+
 Creating a new class from already existing class attribute instead of creating
 from the Scratch is called class inheritance
 e.g., Chef - bake(), measure(), cook()
         PastryChef - bake(), measure(), cook(), whisk(), dough() from chef class
+        Note: We can inherit both appearance as well as behaviour
+
+Syntax:
+
+class Tiger(Animal):  # Inherit Behaviour/appearance from Animal Class to Tiger
+    def __init__(self):
+        super().__init__()  # Inheriting the Super Class (Animal)
+
+Example:
+
+class Animal:
+    def __init__(self):
+        self.num_eyes = 2
+
+    def breathe(self):
+        print("Inhale, exhale.")
+
+class Fish(Animal):
+    def __init__(self):     # Fish inheriting all attributes and methods from Animal
+        super().__init__()
+
+    def breathe(self):      # You can also change/ append extra behaviour as needed
+        super().breathe()
+        print("doing this underwater.")
+
+    def swim(self):
+        print("moving in water.")
+
+nemo = Fish()
+nemo.breathe()  # Now Fish can inherit breathe method from Animal Class
+
+Check Inheritance_example.py for own example
+
+#############################################################################
+
+Slicing:
+When you want a part of list to be as the output or to save into another variable
+you might need to cut out that part which is called slicing
+example:
+names = ["sri", "Tamil", "Subbu", "Suresh", "Siva"]
+
+1. if you want to slice 1st 3
+
+names[0:3] -> will provide the 1st three
+
+think of this like 0 is not the 1st value instead
+the value "sri" is in between 0 and 1 and "Tamil" in between 1 and 2
+so 0:3 will provide you the 1st 3 values
+
+2. if you want to slice all the values after a value
+
+name[2:] -> this will provide from 2 to all the way to end of list
+here it will give back "subbu", "suresh", "siva"
+
+3. Above slicing work in backwards as well, if you want to get all values
+up to a value
+
+names [:3] -> this will provide till the 3rd value
+here this will give "sri", "tamil", "subbu"
+
+4. if you want to slice every 2nd value of a selected values from the list
+you can provide an incremental value in the syntax
+
+names[0:4:2] -> this will provide values from 2nd and 4th value
+
+5. if you dont want to even slice but instead you want all the 2nd values in
+a list
+
+names[::2] -> this will give you all the second values in the list
+
+6. if you want to invert the values of the list, use -1 as incremental
+
+names[::-1] Its very useful
+
+#Important:
+The same slicing method can also be used in Tuples
+example:
+names = ("sri", "Tamil", "Subbu", "Suresh", "Siva")
+names[0:3]
+check slicing_example.py for own examples
+
+
 
